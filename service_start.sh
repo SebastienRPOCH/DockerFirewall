@@ -1,3 +1,3 @@
-dos2unix conf conf
+dos2unix conf
 iptables-restore < conf
 /bin/sh
