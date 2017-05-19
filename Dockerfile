@@ -11,7 +11,7 @@ RUN apt-get install -y sudo
 
 COPY conf /home/docker/conf
 
-RUN dos2unix /home/docker/conf
+
 RUN iptables-restore < /home/docker/conf
 
 COPY interfaces /interfaces
