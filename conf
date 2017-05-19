@@ -17,4 +17,3 @@
 -A OUTPUT -p tcp --dport 80 -j ACCEPT 
 -A INPUT -p tcp --dport 80 -j ACCEPT 
 COMMIT
-# Completed on Wed May 17 12:14:34 2017
