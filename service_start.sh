@@ -1,2 +1,2 @@
-iptables-restore < /conf
+iptables-restore < conf
 /bin/sh
