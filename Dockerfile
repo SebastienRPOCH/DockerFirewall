@@ -1,8 +1,8 @@
 FROM ubuntu
 
 RUN apt-get update
-RUN apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install -y dialog
+RUN apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install -y iputils-ping
 RUN apt-get install -y iptables
 RUN apt-get install -y net-tools
