@@ -1,7 +1,7 @@
 FROM ubuntu
 
 RUN apt-get update
-apt-get install -y --no-install-recommends apt-utils
+RUN apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install -y iputils-ping
 RUN apt-get install -y iptables
 RUN apt-get install -y net-tools
