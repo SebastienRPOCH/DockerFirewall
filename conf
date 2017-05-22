@@ -1,3 +1,4 @@
+#IPTABLES
 *filter
 -P INPUT DROP
 -P OUTPUT DROP
