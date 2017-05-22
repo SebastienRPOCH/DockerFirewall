@@ -1,4 +1,4 @@
-filtre
+*filter
 -P INPUT DROP
 -P OUTPUT DROP
 -P FORWARD DROP
