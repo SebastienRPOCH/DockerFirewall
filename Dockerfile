@@ -10,7 +10,6 @@ RUN apt-get install -y net-tools
 RUN apt-get install -y sudo
 
 COPY conf /home/docker/conf
-RUN dos2unix /home/docker/conf
 
 COPY interfaces /interfaces
 
