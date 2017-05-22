@@ -1,5 +1,4 @@
-#IPTABLES
-*filtre
+filtre
 -P INPUT DROP
 -P OUTPUT DROP
 -P FORWARD DROP
