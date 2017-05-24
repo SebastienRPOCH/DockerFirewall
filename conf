@@ -16,7 +16,15 @@
 -A INPUT -p udp --dport 53 -j ACCEPT 
 -A OUTPUT -p tcp --dport 80 -j ACCEPT 
 -A INPUT -p tcp --dport 80 -j ACCEPT 
--t nat -A POSTROUTING -o eth1 -j MASQUERADE
 -A FORWARD -i eth1 -o eth0 -m state --state RELATED,ESTABLISHED -j ACCEPT
 -A FORWARD -i eth0 -o eth1 -j ACCEPT
+COMMIT
+*nat
+-A OUTPUT -d 127.0.0.11/32 -j DOCKER_OUTPUT
+-A POSTROUTING -d 127.0.0.11/32 -j DOCKER_POSTROUTING
+-A POSTROUTING -o eth1 -j MASQUERADE
+-A DOCKER_OUTPUT -d 127.0.0.11/32 -p tcp -m tcp --dport 53 -j DNAT --to-destination 127.0.0.11:43165
+-A DOCKER_OUTPUT -d 127.0.0.11/32 -p udp -m udp --dport 53 -j DNAT --to-destination 127.0.0.11:44222
+-A DOCKER_POSTROUTING -s 127.0.0.11/32 -p tcp -m tcp --sport 43165 -j SNAT --to-source :53
+-A DOCKER_POSTROUTING -s 127.0.0.11/32 -p udp -m udp --sport 44222 -j SNAT --to-source :53
 COMMIT
