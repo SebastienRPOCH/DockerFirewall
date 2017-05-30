@@ -11,7 +11,7 @@ RUN apt-get install -y sudo
 
 COPY conf /home/docker/conf
 
-COPY sysctl.conf /etc/sysctl.conf
+RUN sysctl -w net.ipv4.ip_forward=1 
 
 COPY service_start.sh /home/docker/script/service_start.sh
 RUN dos2unix /home/docker/script/service_start.sh
