@@ -17,6 +17,6 @@ RUN chmod 744 /home/docker/script/service_start.sh
 
 ENTRYPOINT /home/docker/script/service_start.sh
 
-EXPOSE 27080 27081
+EXPOSE 8888
 
 WORKDIR /home/docker
