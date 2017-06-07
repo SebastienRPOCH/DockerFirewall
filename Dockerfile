@@ -8,6 +8,8 @@ RUN apt-get install -y iputils-ping
 RUN apt-get install -y iptables
 RUN apt-get install -y net-tools
 RUN apt-get install -y sudo
+RUN apt-get update
+RUN apt-get install -y curl
 
 COPY conf /home/docker/conf
 
